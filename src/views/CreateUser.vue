@@ -1,15 +1,18 @@
 <template>
-    <CreateUser/>
-  </template>
+  <NavBar/>
+  <CreateUser/>
+</template>
   
-  <script>
+<script>
   
-  import CreateUser from '@/components/CreateUserForm.vue'
+import CreateUser from '@/components/CreateUserForm.vue'
+import NavBar from '@/components/NavBar.vue';
   
-  export default {
-    name: 'LoginPage',
-    components: {
-      CreateUser
-    }
-  }
-  </script>
+export default {
+  name: 'LoginPage',
+  components: {
+    CreateUser,
+    NavBar
+}
+}
+</script>

@@ -7,7 +7,7 @@ import CreateUserPage from '../views/CreateUser.vue'
 const routes = [
   { path: '/', name:'Login', component: LoginPage },
   { path: '/compra', name:'Buy', component: BuyPage },
-  { path: '/newUser', name:'CreateUser', component: CreateUserPage}
+  { path: '/novoUsuario', name:'CreateUser', component: CreateUserPage}
 ]
 
 const router = createRouter({
