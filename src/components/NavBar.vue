@@ -18,6 +18,15 @@
         </ul>
 
     </div>
+    <div class="uk-navbar-right uk-margin-small-right">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active">
+                <a href="/login">
+                    Login
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 </template>
