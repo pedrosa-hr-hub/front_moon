@@ -23,7 +23,7 @@
       <br>
       <div class="uk-inline">
         <span class="uk-form-icon" uk-icon="icon: lock"></span>
-        <input class="uk-input" type="password" placeholder="*****">
+        <input class="uk-input" type="password" placeholder="*******">
       </div>
     </div>
 

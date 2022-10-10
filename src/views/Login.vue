@@ -4,10 +4,10 @@
 
 <script>
 
-import Login from '@/components/Login.vue'
+import Login from '@/components/LoginForm.vue'
 
 export default {
-  name: 'Home',
+  name: 'LoginPage',
   components: {
     Login
   }
