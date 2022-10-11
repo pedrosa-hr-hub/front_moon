@@ -12,9 +12,6 @@
                     </div>
                 </a>
             </li>
-            <li><a href="/novoUsuario">Criar Novo Usuario</a></li>
-            <li><a href="/compra">Compra</a></li>
-            <li><a href="/venda">Venda</a></li>
         </ul>
 
     </div>

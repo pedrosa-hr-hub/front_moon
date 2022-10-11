@@ -5,9 +5,11 @@ import BuyPage from '../views/Buy.vue'
 import CreateUserPage from '../views/CreateUser.vue'
 import SellPage from '../views/Sell.vue'
 import HomePage from '../views/Home.vue'
+import MainPage from '../views/Main.vue'
 
 const routes = [
   { path: '/', name:'Home', component: HomePage },
+  { path: '/menu', name:'Main', component: MainPage },
   { path: '/login', name:'Login', component: LoginPage },
   { path: '/compra', name:'Buy', component: BuyPage },
   { path: '/novoUsuario', name:'CreateUser', component: CreateUserPage},

@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <button type="submit" class="uk-button uk-button-primary">ENTRAR</button>
+    <button type="submit" class="uk-button uk-button-primary" @click="chageRoute('/menu')">ENTRAR</button>
 
   </form>
 
@@ -39,8 +39,15 @@
 </template>
 
 <script>
+import router from '@/router';
+
 export default {
-  name: 'Login'
+  name: 'Login',
+  methods:{
+    chageRoute(route){
+      router.push(route);
+    }
+  }
 }
 </script>
 
