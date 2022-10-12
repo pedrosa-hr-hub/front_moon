@@ -14,7 +14,8 @@
     </div>
     <div class="uk-card-footer">
         <center>
-            <a class="uk-button uk-button-primary" href="/compra">COMPRA</a>
+            <a class="uk-button uk-button-primary" href="/carteira">CARTEIRA</a>
+            <a class="uk-button uk-button-primary uk-margin-medium-left v" href="/compra">COMPRA</a>
             <a class="uk-button uk-button-primary uk-margin-medium-left" href="/venda">VENDA</a>
         </center>
     </div>
