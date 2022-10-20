@@ -6,7 +6,7 @@
   uk-margin-large-right  
   uk-height-max-large">
     
-  <form action="">
+  <form v-on:submit.prevent="submitForm">
     <legend class="uk-legend">Login</legend>
 
     <div class="uk-margin">
@@ -14,7 +14,7 @@
       <br>
       <div class="uk-inline">
         <span class="uk-form-icon" uk-icon="icon: user"></span>
-        <input class="uk-input" type="text" placeholder="Usuário">
+        <input class="uk-input" type="text" placeholder="Usuário" v-model="form.user">
       </div>
     </div>
 
@@ -23,11 +23,11 @@
       <br>
       <div class="uk-inline">
         <span class="uk-form-icon" uk-icon="icon: lock"></span>
-        <input class="uk-input" type="password" placeholder="*******">
+        <input class="uk-input" type="password" placeholder="*******" v-model="form.password">
       </div>
     </div>
 
-    <button type="submit" class="uk-button uk-button-primary" @click="chageRoute('/menu')">ENTRAR</button>
+    <button type="submit" class="uk-button uk-button-primary">ENTRAR</button>
 
   </form>
 
@@ -40,12 +40,33 @@
 
 <script>
 import router from '@/router';
+import axios from 'axios';
 
 export default {
   name: 'Login',
+  data(){
+    return{
+      form: {
+        user: '',
+        password: '',
+      }
+    }
+  },
   methods:{
     chageRoute(route){
       router.push(route);
+    },
+    alert_error(error){
+      alert(error);
+    },
+    submitForm(){
+      axios.post('http://localhost:3000/userAuth', this.form)
+      .then((res) => {
+        this.chageRoute('/menu');
+      })
+      .catch((error) => {
+        this.alert_error(error);
+      })
     }
   }
 }

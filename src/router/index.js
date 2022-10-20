@@ -6,21 +6,21 @@ import CreateUserPage from '../views/CreateUser.vue'
 import SellPage from '../views/Sell.vue'
 import HomePage from '../views/Home.vue'
 import MainPage from '../views/Main.vue'
-import WalletPage from '../views/Wallet.vue'
+import WalletPage from '../views/Wallet.vue';
 
 const routes = [
   { path: '/', name:'Home', component: HomePage },
   { path: '/menu', name:'Main', component: MainPage },
-  { path: '/login', name:'Login', component: LoginPage },
+  { path: '/login', name:'Login', component: LoginPage},
   { path: '/compra', name:'Buy', component: BuyPage },
   { path: '/novoUsuario', name:'CreateUser', component: CreateUserPage},
   { path: '/venda', name:'Sell', component: SellPage},
-  { path: '/carteira', name:'Wallet', component: WalletPage}
+  { path: '/carteira', name:'Wallet', component: WalletPage, meta: { needsAuth: true } }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes
-})
+});
 
 export default router
