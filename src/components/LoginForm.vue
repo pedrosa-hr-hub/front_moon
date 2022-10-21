@@ -62,6 +62,7 @@ export default {
     submitForm(){
       axios.post('http://localhost:3000/userAuth', this.form)
       .then((res) => {
+        localStorage.setItem('id','test')
         this.chageRoute('/menu');
       })
       .catch((error) => {
