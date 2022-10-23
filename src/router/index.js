@@ -23,4 +23,10 @@ const router = createRouter({
   routes
 });
 
+
+router.beforeEach((to, from, next)=>{
+  if(to.name !== 'Login' && !document.cookie) next({name:'Login'});
+  else next();
+});
+
 export default router
