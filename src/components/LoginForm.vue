@@ -62,7 +62,7 @@ export default {
     submitForm(){
       axios.post('http://localhost:3000/userAuth', this.form)
       .then((res) => {
-        document.cookie = `user=${res.data.id};max-age=1800;`
+        document.cookie = `user=${res.data.idUser};max-age=1800;`
         this.chageRoute('/menu');
       })
       .catch((error) => {
