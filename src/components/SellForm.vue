@@ -4,13 +4,22 @@
     uk-margin-medium-top 
     uk-margin-large-left 
     uk-margin-large-right  
-    uk-height-max-large">
+    ">
         
     <form action="">
     <legend class="uk-legend">Venda de Ativos</legend>
+
+    <div class="uk-margin">
+      <label class="uk-form-label">Carteira:</label>
+      <br>
+      <div class="uk-inline">
+        <span class="uk-form-icon" uk-icon="icon: chevron-double-right"></span>
+        <input class="uk-input" type="text" placeholder="Carteira">
+      </div>
+    </div>
     
     <div class="uk-margin">
-        <label class="uk-form-label">Nome:</label>
+        <label class="uk-form-label">Nome do Ativo:</label>
         <br>
         <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: chevron-double-right"></span>
