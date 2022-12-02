@@ -24,13 +24,13 @@ const router = createRouter({
 });
 
 
-router.beforeEach((to, from, next)=>{
+/*router.beforeEach((to, from, next)=>{
   if(to.name !== 'Login' && to.name !== 'Home' && to.name !== 'CreateUser' && !document.cookie){
     next({name:'Login'});
   }
   else {
     next();
   }
-});
+}); */
 
 export default router
