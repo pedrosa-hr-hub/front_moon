@@ -25,7 +25,7 @@ const router = createRouter({
 
 
 router.beforeEach((to, from, next)=>{
-  if(to.name !== 'Login' && to.name !== 'Home' && !document.cookie){
+  if(to.name !== 'Login' && to.name !== 'Home' && to.name !== 'CreateUser' && !document.cookie){
     next({name:'Login'});
   }
   else {

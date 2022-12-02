@@ -6,7 +6,7 @@
       uk-margin-large-right  
       uk-height-max-large">
         
-      <form action="">
+      <form v-on:submit.prevent="submitForm">
         <legend class="uk-legend">Criando Novo Usuário</legend>
     
         <div class="uk-margin">
@@ -14,7 +14,7 @@
           <br>
           <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: user"></span>
-            <input class="uk-input" type="text" placeholder="Seu nome">
+            <input class="uk-input" type="text" placeholder="Seu nome" v-model="form.user">
           </div>
         </div>
     
@@ -23,7 +23,7 @@
           <br>
           <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: mail"></span>
-            <input class="uk-input" type="email" autocomplete="email" placeholder="exemplo@outlook.com">
+            <input class="uk-input" type="email" autocomplete="email" placeholder="exemplo@outlook.com" v-model="form.email">
           </div>
         </div>
     
@@ -32,7 +32,7 @@
           <br>
           <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: lock"></span>
-            <input class="uk-input" type="password" placeholder="********">
+            <input class="uk-input" type="password" placeholder="********" v-model="password">
           </div>
         </div>
     
@@ -41,7 +41,7 @@
           <br>
           <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: lock"></span>
-            <input class="uk-input" type="password" placeholder="********">
+            <input class="uk-input" type="password" placeholder="********" v-model="password_confirm">
           </div>
         </div>
     
@@ -49,10 +49,45 @@
       </form>
     </div>
     
-    </template>
+</template>
     
-    <script>
-    export default {
-      name: 'CreateUserForm'
+<script>
+  import router from '@/router';
+  import axios from 'axios';
+
+  export default {
+    name: 'CreateUserForm',
+    data(){
+    return{
+      form: {
+        user: '',
+        email: '',
+        password: ''
+        }
+      }
+    },
+    methods:{
+      chageRoute(route){
+        router.push(route);
+      },
+      alert_error(error){
+        alert(error);
+      },
+      submitForm(){
+        if (this.password == this.password_confirm) {
+
+          this.form.password = this.password;
+
+          axios.post('http://localhost:3000/user', this.form)
+          .then(() => {
+            this.chageRoute('/login');
+          }).catch((error) => {
+            this.alert_error(error);
+          })
+        } else {
+          this.alert_error("Password not match, verify values");
+        }
+      }
     }
-    </script>
+  }
+</script>
