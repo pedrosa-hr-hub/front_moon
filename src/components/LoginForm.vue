@@ -10,11 +10,11 @@
     <legend class="uk-legend">Login</legend>
 
     <div class="uk-margin">
-      <label class="uk-form-label">Usuário:</label>
+      <label class="uk-form-label">E-mail:</label>
       <br>
       <div class="uk-inline">
         <span class="uk-form-icon" uk-icon="icon: user"></span>
-        <input class="uk-input" type="text" placeholder="Usuário" v-model="form.user">
+        <input class="uk-input" type="text" placeholder="Usuário" v-model="form.email">
       </div>
     </div>
 
@@ -47,7 +47,7 @@ export default {
   data(){
     return{
       form: {
-        user: '',
+        email: '',
         password: '',
       }
     }
