@@ -77,7 +77,7 @@ export default {
         date: ''
       }
     }
-  },  
+  },
   methods: {
     chageRoute(route){
       router.push(route);
