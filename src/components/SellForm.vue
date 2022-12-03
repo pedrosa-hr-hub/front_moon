@@ -6,7 +6,7 @@
     uk-margin-large-right  
     ">
         
-    <form action="">
+    <form v-on:submit.prevent="submitForm">
     <legend class="uk-legend">Venda de Ativos</legend>
 
     <div class="uk-margin">
