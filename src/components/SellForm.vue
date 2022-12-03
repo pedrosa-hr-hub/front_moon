@@ -14,7 +14,7 @@
       <br>
       <div class="uk-inline">
         <span class="uk-form-icon" uk-icon="icon: chevron-double-right"></span>
-        <input class="uk-input" type="text" placeholder="Carteira">
+        <input class="uk-input" type="text" placeholder="Carteira" v-model="form.wallet">
       </div>
     </div>
     
@@ -23,7 +23,7 @@
         <br>
         <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: chevron-double-right"></span>
-            <input class="uk-input" type="text" placeholder="Vale S.A">
+            <input class="uk-input" type="text" placeholder="Vale S.A" v-model="form.name">
         </div>
     </div>
     
@@ -32,7 +32,7 @@
         <br>
         <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: chevron-double-right"></span>
-            <input class="uk-input" type="text" placeholder="VALE3 ou VALE3F">
+            <input class="uk-input" type="text" placeholder="VALE3 ou VALE3F" v-model="form.ticker">
         </div>
     </div>
     
@@ -41,7 +41,7 @@
         <br>
         <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: chevron-double-right"></span>
-            <input class="uk-input" type="number" step="0.01" placeholder="95,99">
+            <input class="uk-input" type="number" step="0.01" placeholder="95,99" v-model="form.price">
         </div>
     </div>
     
@@ -50,7 +50,7 @@
         <br>
         <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: calendar"></span>
-            <input class="uk-input" type="date">
+            <input class="uk-input" type="date" v-model="form.date">
         </div>
     </div>
     
@@ -61,7 +61,38 @@
 </template>
     
 <script>
+import router from '@/router';
+import axios from 'axios';
+
 export default {
-    name: 'SellForm'
+    name: 'SellForm',
+    data(){
+    return{
+      form: {
+        wallet: '',
+        name: '',
+        ticker: '',
+        price: '',
+        date: ''
+      }
+    }
+  },
+  methods: {
+    chageRoute(route){
+      router.push(route);
+    },
+    alert_error(error){
+      alert(error);
+    },
+    submitForm(){
+      axios.post('http://localhost:3000/sell', this.form)
+      .then(() => {
+        this.chageRoute('/menu');
+      })
+      .catch((error) => {
+        this.alert_error(error);
+      })
+    }
+  }
 }
 </script>
