@@ -1,18 +1,18 @@
 <template>
-  <NavBar/>
+  <NavBarLogin/>
   <HomeCard/>
 </template>
   
 <script>
   
 import HomeCard from '@/components/HomeCard.vue'
-import NavBar from '@/components/NavBar.vue'
+import NavBarLogin from '@/components/NavBarLogin.vue'
   
 export default {
   name: 'BuyPage',
   components: {
     HomeCard,
-    NavBar
+    NavBarLogin
   }
 }
 </script>
