@@ -7,6 +7,7 @@ import SellPage from '../views/Sell.vue';
 import HomePage from '../views/Home.vue';
 import MainPage from '../views/Main.vue';
 import WalletPage from '../views/Wallet.vue';
+import searchBuyPage from '../views/SearchBuy.vue';
 
 const routes = [
   { path: '/', name:'Home', component: HomePage },
@@ -15,7 +16,8 @@ const routes = [
   { path: '/compra', name:'Buy', component: BuyPage },
   { path: '/novoUsuario', name:'CreateUser', component: CreateUserPage},
   { path: '/venda', name:'Sell', component: SellPage},
-  { path: '/carteira', name:'Wallet', component: WalletPage }
+  { path: '/carteira', name:'Wallet', component: WalletPage },
+  { path: '/pesquisaCompra', name:'searchBuy', component: searchBuyPage }
 ]
 
 const router = createRouter({
@@ -24,13 +26,13 @@ const router = createRouter({
 });
 
 
-/*router.beforeEach((to, from, next)=>{
+router.beforeEach((to, from, next)=>{
   if(to.name !== 'Login' && to.name !== 'Home' && to.name !== 'CreateUser' && !document.cookie){
     next({name:'Login'});
   }
   else {
     next();
   }
-}); */
+});
 
 export default router

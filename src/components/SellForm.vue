@@ -44,7 +44,16 @@
             <input class="uk-input" type="number" step="0.01" placeholder="95,99" v-model="form.price">
         </div>
     </div>
-    
+
+    <div class="uk-margin">
+      <label class="uk-form-label">Quantidade:</label>
+      <br>
+      <div class="uk-inline">
+        <span class="uk-form-icon" uk-icon="icon: chevron-double-right"></span>
+        <input class="uk-input" type="number" step="1" placeholder="15" v-model="form.qtd">
+      </div>
+    </div>
+
     <div class="uk-margin">
         <label class="uk-form-label">Data da Venda:</label>
         <br>
@@ -73,7 +82,8 @@ export default {
         name: '',
         ticker: '',
         price: '',
-        date: ''
+        date: '',
+        qtd: ''
       }
     }
   },
