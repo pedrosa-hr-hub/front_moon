@@ -24,9 +24,11 @@
             </div>
         </center>
         <div v-for="buy in buy" :key="buy.id">
-            <h1>{{buy.name}}</h1>
-            <p>{{buy.price}}</p>
-            <p>{{buy.qtd}}</p>
+            <h1>Empresa: {{buy.name}}</h1>
+            <p>Preço: {{buy.price}}</p>
+            <p>Quantidade: {{buy.qtd}}</p>
+            <p>Data: {{dateFormat(buy.dateBuy)}}</p>
+            <button @click="deleteFunction(buy.id)" class="uk-button uk-button-danger">DELETAR</button>
         </div>
     </div>
     <div class="uk-card-footer">
@@ -38,6 +40,7 @@
     
 <script>
 import axios from 'axios';
+import moment from 'moment';
 
 function getCookie(name) {
     var nameEQ = name + "=";
@@ -66,16 +69,26 @@ export default {
       alert(error);
     },
     seachData(){
-            axios.post('http://localhost:3000/buyWallet', this.seach)
-            .then((response) => {
-
-                this.buy = response.data;
-
-            })
-            .catch((error) => {
-                this.alert_error(error);
-            })
-        }
+        axios.post('http://localhost:3000/buyWallet', this.seach)
+        .then((response) => {
+            this.buy = response.data;
+        })
+        .catch((error) => {
+            this.alert_error(error);
+        })
+        },
+    dateFormat(value){
+        return moment(value).format('DD/MM/YYYY');
+    },
+    deleteFunction(id){
+    axios.delete('http://localhost:3000/buy/' + id)
+    .then(() => {
+        this.seachData();
+    })
+    .catch((error)=>{
+        this.alert_error(error);
+    })
+    },
     },
 }
 </script>
