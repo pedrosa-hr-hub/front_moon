@@ -10,7 +10,7 @@
                 <br>
                 <br>
             <center>
-                <a class="uk-button uk-button-primary uk-margin-medium-left v" href="/pesquisaCompra">COMPRAS</a>
+                <a class="uk-button uk-button-primary uk-margin-medium-left" href="/pesquisaCompra">COMPRAS</a>
                 &nbsp;
                 &nbsp;
                 <a class="uk-button uk-button-primary uk-margin-medium-left" href="/pesquisaVenda">VENDA</a>
