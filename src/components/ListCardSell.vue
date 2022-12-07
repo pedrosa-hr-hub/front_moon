@@ -24,9 +24,14 @@
                 </div>
             </center>
             <div v-for="sell in sell" :key="sell.id">
-                <h1>{{sell.name}}</h1>
-                <p>{{sell.price}}</p>
-                <p>{{sell.qtd}}</p>
+                <h1>Empresa: {{sell.name}}</h1>
+                <p>Preço: {{sell.price}}</p>
+                <p>Quantidade: {{sell.qtd}}</p>
+                <p>Data: {{dateFormat(sell.dateSell)}}</p>
+                <button @click="deleteFunction(sell.id)" class="uk-button uk-button-danger">DELETAR</button>
+                <br>
+                <br>
+                <br>
             </div>
         </div>
         <div class="uk-card-footer">
@@ -38,6 +43,7 @@
         
     <script>
     import axios from 'axios';
+    import moment from 'moment';
     
     function getCookie(name) {
         var nameEQ = name + "=";
@@ -75,6 +81,18 @@
                 .catch((error) => {
                     this.alert_error(error);
                 })
+            },
+            deleteFunction(id){
+                axios.delete('http://localhost:3000/sell/' + id)
+                .then(() => {
+                    this.seachData();
+                })
+                .catch((error)=>{
+                    this.alert_error(error);
+                })
+            },
+            dateFormat(value){
+                return moment(value).format('DD/MM/YYYY');
             }
         },
     }
