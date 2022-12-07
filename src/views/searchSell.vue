@@ -6,10 +6,10 @@
   <script>
     
   import NavBar from '@/components/NavBar.vue'
-  import ListCard from '@/components/ListCardBuy.vue'
+  import ListCard from '@/components/ListCardSell.vue'
     
   export default {
-    name: 'ListBuyPage',
+    name: 'ListSellPage',
     components: {
       ListCard,
       NavBar
