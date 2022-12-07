@@ -29,6 +29,9 @@
             <p>Quantidade: {{buy.qtd}}</p>
             <p>Data: {{dateFormat(buy.dateBuy)}}</p>
             <button @click="deleteFunction(buy.id)" class="uk-button uk-button-danger">DELETAR</button>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
     <div class="uk-card-footer">
