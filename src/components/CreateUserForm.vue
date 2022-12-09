@@ -78,7 +78,7 @@
 
           this.form.password = this.password;
 
-          axios.post('http://localhost:3000/user', this.form)
+          axios.post(`${process.env.VUE_APP_API_URL}/user`, this.form)
           .then(() => {
             this.chageRoute('/login');
           }).catch((error) => {

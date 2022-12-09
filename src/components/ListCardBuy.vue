@@ -72,7 +72,7 @@ export default {
       alert(error);
     },
     seachData(){
-        axios.post('http://localhost:3000/buyWallet', this.seach)
+        axios.post(`${process.env.VUE_APP_API_URL}/buyWallet`, this.seach)
         .then((response) => {
             this.buy = response.data;
         })
@@ -84,7 +84,7 @@ export default {
         return moment(value).format('DD/MM/YYYY');
     },
     deleteFunction(id){
-    axios.delete('http://localhost:3000/buy/' + id)
+    axios.delete(`${process.env.VUE_APP_API_URL}/buy/` + id)
     .then(() => {
         this.seachData();
     })

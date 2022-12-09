@@ -56,7 +56,7 @@ export default {
       alert(error);
     },
     submitForm(){
-      axios.post('http://localhost:3000/wallet', this.form)
+      axios.post(`${process.env.VUE_APP_API_URL}/wallet`, this.form)
       .then(() => {
         this.chageRoute('/menu');
       })

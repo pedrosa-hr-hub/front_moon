@@ -95,7 +95,7 @@ export default {
       alert(error);
     },
     submitForm(){
-      axios.post('http://localhost:3000/sell', this.form)
+      axios.post(`${process.env.VUE_APP_API_URL}/sell`, this.form)
       .then(() => {
         this.chageRoute('/menu');
       })

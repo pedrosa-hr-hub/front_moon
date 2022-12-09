@@ -60,7 +60,7 @@ export default {
       alert(error);
     },
     submitForm(){
-      axios.post('http://localhost:3000/userAuth', this.form)
+      axios.post(`${process.env.VUE_APP_API_URL}/userAuth`, this.form)
       .then((res) => {
         document.cookie = `user=${res.data.id};max-age=1800;`
         this.chageRoute('/menu');

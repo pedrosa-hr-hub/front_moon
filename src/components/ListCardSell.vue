@@ -72,7 +72,7 @@
           alert(error);
         },
         seachData(){
-                axios.post('http://localhost:3000/sellWallet', this.seach)
+                axios.post(`${process.env.VUE_APP_API_URL}/sellWallet`, this.seach)
                 .then((response) => {
     
                     this.sell = response.data;
@@ -83,7 +83,7 @@
                 })
             },
             deleteFunction(id){
-                axios.delete('http://localhost:3000/sell/' + id)
+                axios.delete(`${process.env.VUE_APP_API_URL}/sell/` + id)
                 .then(() => {
                     this.seachData();
                 })
